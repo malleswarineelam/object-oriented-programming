@@ -23,5 +23,16 @@ public class Product {
         this.quantity = quantity;
         this.centralTax = centralTax;
     }
+    public void display(){
+        System.out.println("default constructor initialised");
+        System.out.println("----------------------------------------------");
+        System.out.println(" ");
+        System.out.println("Product ID : " + id);
+        System.out.println("Product Name : " + name);
+        System.out.println("Product maxRetailPrice : " + maxRetailPrice);
+        System.out.println("centralTax : " + centralTax);
+        System.out.println("quantity : " + quantity);
+        System.out.println(" ");
+    }
 }
 
