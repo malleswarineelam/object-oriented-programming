@@ -5,6 +5,7 @@ public class Main {
         Product product1;
         product1 = new Product();
 
+
         /*System.out.println("default constructor initialised");
         System.out.println("----------------------------------------------");
         System.out.println(" ");
@@ -25,7 +26,7 @@ public class Main {
         System.out.printf("%-20s %-20s%n", "Product Name       : ", product1.name);
         System.out.printf("%-20s %-20.2f%n", "Max Retail Price   : ", product1.maxRetailPrice);
         System.out.printf("%-20s %-20.2f%n", "Central Tax        : ", product1.centralTax);
-        System.out.printf("%-20s %-20d%n", "Quantity           : ", product1.quantity);
+        System.out.printf("%-20s %-20d%n", "Quantity          : ", product1.quantity);
         System.out.println(" ");
 
         System.out.println("-----------------------------------------------------");
@@ -42,7 +43,7 @@ public class Main {
         System.out.println("quantity : " + product2.quantity);
         System.out.println(" ");*/
 
-      /*  Product product2 = new Product(1, "Lenovo", 100.00F, 10, 2.5F);
+       /* Product product2 = new Product(1, "Lenovo", 100.00F, 10, 2.5F,7.5F);
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("parameterized initialised");
@@ -61,7 +62,9 @@ public class Main {
 
         System.out.println("--------------------------------------------------------------------------------");
         System.out.println("--------------------------------------------------------------------------------");*/
-        product1.display();
+        Product product3=new Product();
+        product3.displayProduct();
+
     }
 
 }
