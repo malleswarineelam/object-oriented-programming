@@ -61,7 +61,7 @@ public class Product {
         return priceAfterDiscount() * stateTax / 100;
     }
 
-    float calculateCentralTax() {
+    float calculateCentralTax() {                           //methods
         return priceAfterDiscount() * centralTax / 100;
     }
 
