@@ -1,6 +1,7 @@
 package com.java.oop.arrays;
 
-public class ArrayTest {
+public class
+ArrayTest {
     public static void main(String[] args) {
         int[] ids;//declaration
         ids=new int[4];//Instantiation
