@@ -2,7 +2,7 @@ package com.java.oop.collections;
 
 import java.util.Objects;
 
-public class Customer implements Comparable <Customer>{
+public class Customer implements Comparable <Customer>{//generic for treeset
 
     private String id;
     private String name;
