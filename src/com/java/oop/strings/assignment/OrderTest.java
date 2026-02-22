@@ -1,4 +1,5 @@
-package com.java.oop.strings;
+package com.java.oop.strings.assignment;
+
 import java.util.HashSet;
 
 public class OrderTest {

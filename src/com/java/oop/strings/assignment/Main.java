@@ -1,4 +1,4 @@
-package com.java.oop.strings;
+package com.java.oop.strings.assignment;
 
 import java.util.HashSet;
 import java.util.Iterator;
