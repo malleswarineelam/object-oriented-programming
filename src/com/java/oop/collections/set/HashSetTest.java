@@ -1,4 +1,6 @@
-package com.java.oop.collections;
+package com.java.oop.collections.set;
+
+import com.java.oop.collections.Customer;
 
 import java.util.HashSet;
 import java.util.Iterator;

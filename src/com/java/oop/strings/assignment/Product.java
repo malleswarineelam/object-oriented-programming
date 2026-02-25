@@ -11,6 +11,13 @@ public class Product {
     public Product() {
     }
 
+    public Product(String id, String name, double maxRetailPrice, float discountPercentage) {
+        this.id = id;
+        this.name = name;
+        this.maxRetailPrice = maxRetailPrice;
+        this.discountPercentage = discountPercentage;
+    }
+
     public String getId() {
         return id;
     }

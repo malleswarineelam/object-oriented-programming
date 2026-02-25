@@ -1,5 +1,7 @@
 package com.java.oop.collections.arraylist.assignment;
 
+import java.util.Objects;
+
 public class Product {
     private String id;
     private String name;
@@ -7,6 +9,7 @@ public class Product {
     private float discountPercentage;
 
     public Product() {
+
     }
 
     public Product(String id, String name, double maxRetailPrice, float discountPercentage) {
@@ -48,8 +51,6 @@ public class Product {
         this.discountPercentage = discountPercentage;
     }
 
-
-
     @Override
     public String toString() {
         return "Product{" +
@@ -60,3 +61,5 @@ public class Product {
                 '}';
     }
 }
+
+
