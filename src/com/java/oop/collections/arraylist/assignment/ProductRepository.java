@@ -31,30 +31,18 @@ public class ProductRepository {
         return null;
     }
 
-  /* public Product update(String id, Product product){
-        Product byId=getProductById(id);
-        if(byId==null)
+
+    public Product update(String id, Product product){
+        Product byId = getProductById(id);
+        if(byId == null)
             return null;
-        else{                  //correct
-            int index=products.indexOf(byId);
-            products.set(index,product);
+        else {
+            int index = productArrayList.indexOf(byId);
+            productArrayList.set(index,product);
         }
-
-        }*/
-        public Product update(String id, Product product){
-
-        for(Product p: productArrayList){
-            if(product.getId().equals(id)){
-                Product newProduct = new Product();
-                product.setName(newProduct.getName());
-                product.setMaxRetailPrice((newProduct.getMaxRetailPrice()));
-                product.setDiscountPercentage(newProduct.getDiscountPercentage());
-                return product;
-            }
-        }
-        return null;
-
+        return product;
     }
+
     public void delete(Product product){
         productArrayList.remove(product);}
 
