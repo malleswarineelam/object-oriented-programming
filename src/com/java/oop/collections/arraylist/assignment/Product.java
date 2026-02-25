@@ -47,9 +47,8 @@ public class Product {
     public void setDiscountPercentage(float discountPercentage) {
         this.discountPercentage = discountPercentage;
     }
-    public void display() {
-        System.out.println(id + " | " + name + " | ₹" + maxRetailPrice + " | " + discountPercentage + "%");
-    }
+
+
 
     @Override
     public String toString() {

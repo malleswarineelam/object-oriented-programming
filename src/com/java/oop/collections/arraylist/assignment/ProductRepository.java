@@ -5,40 +5,22 @@ import java.util.*;
 public class ProductRepository {
     private ArrayList<Product> products =new ArrayList<>();
 
-    public void loadProducts(String[] data){
-        for(String line:data){
-            String[] parts=line.split(",");//split by comma
-            Product product = new Product(parts[0],parts[1],Double.parseDouble(parts[2]),Float.parseFloat(parts[3]));//add each element
-            products.add(product);//adding as object
-        }
-    }
-    /* public ArrayList<Product> loadProductsFromData(String[] data){
+     public ArrayList<Product> loadProductsFromData(String[] data){
     for(String line:data){
             String[] parts=line.split(",");//split by comma
             Product product = new Product(parts[0],parts[1],Double.parseDouble(parts[2]),Float.parseFloat(parts[3]));//add each element //correct
             products.add(product); //adding as object
-            return products;}
-/*
-==============================================
-     public productRepository(){
-     this.products=new ArrayList<>();
-     //correct
-public ArrayList<Product> getAll()
-{
-     return products;
+            }
+    return products;
      }
-     */
 
-    public void save(Product product)
-    {
-        products.add(product);
-    }
-    /*=======================
+
     public Product save(Product product){
     products.add(product);
-    return Product;
+    return product;
+    }
 
-     */
+
 
     public Product getProductById(String id){
         for(Product product:products){
@@ -91,18 +73,53 @@ public ArrayList<Product> getAll()
             }
         }
     }*/
-    public void displayAllProducts(){
-        for(Product product:products){
-            product.display();
+       public void displayAllProducts() {
+
+           System.out.printf("%-8s | %-25s | %-12s | %-8s\n",
+                   "ID", "PRODUCT NAME", "PRICE", "DISC");
+
+           System.out.println("---------------------------------------------------------------");
+           for (Product p : products) {
+               System.out.printf("%-8s | %-25s | ₹%-10.2f | %-7.2f%%\n",
+                       p.getId(),
+                       p.getName(),
+                       p.getMaxRetailPrice(),
+                       p.getDiscountPercentage());
+           }
+       }
+
+
+    public void sortByPriceAscending(){
+        for (int i = 0; i < products.size() - 1; i++) {
+
+            for (int j = 0; j < products.size() - i - 1; j++) {
+
+                if (products.get(j).getMaxRetailPrice() > products.get(j + 1).getMaxRetailPrice()) {
+
+                    Product temp = products.get(j);
+                    products.set(j, products.get(j + 1));
+                    products.set(j + 1, temp);
+                }
+            }
         }
     }
 
 
-    public void sortByPriceAscending(){
-        products.sort(Comparator.comparing(Product::getMaxRetailPrice));
-    }
     public void sortByPriceDescending(){
-        products.sort(Comparator.comparing(Product::getMaxRetailPrice).reversed());
+      //  List<Product> sortedlist=new ArrayList<>();
+
+        for (int i = 0; i < products.size() - 1; i++) {
+
+            for (int j = 0; j < products.size() - i - 1; j++) {
+
+                if (products.get(j).getMaxRetailPrice() < products.get(j + 1).getMaxRetailPrice()) {
+
+                    Product temp = products.get(j);
+                    products.set(j, products.get(j + 1));
+                    products.set(j + 1, temp);
+                }
+            }
+        }
     }
 
 
@@ -128,10 +145,22 @@ public ArrayList<Product> getAll()
         return getTotalValue() / products.size();
     }
 
-    public long countProductsAbovePrice(double price){
+   /* public long countProductsAbovePrice(double price){
         return products.stream()
                 .filter(product -> product.getMaxRetailPrice() > price).count();
-    }
+    }*/
+   public int countProductsAbovePrice(double price) {
+
+       int count = 0;
+
+       for (Product p : products) {
+           if (p.getMaxRetailPrice() > price) {
+               count++;
+           }
+       }
+
+       return count;
+   }
 
     public List<Product> getProductsWithDiscountAbove(float discount){
         List<Product> result = new ArrayList<>();

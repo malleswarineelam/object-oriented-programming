@@ -14,11 +14,11 @@ public class Main {
                 "p-106,OnePlus 11R,45999.00,9.0",
                 "p-107,Boat Rockerz Headphones,2999.00,15.0",
                 "p-108,Sony Bravia 43inch TV,52999.00,11.5",
-                "p-109,LG Double Door Refrigerator,38999.00,13.0",
+                "p-109,LG Double Door Fridge,38999.00,13.0",
                 "p-110,Canon EOS 1500D Camera,41999.00,6.5"
         };
 
-        productRepository.loadProducts(data);
+        productRepository.loadProductsFromData(data);
 
         System.out.println(" ALL PRODUCTS ");
         productRepository.displayAllProducts();
