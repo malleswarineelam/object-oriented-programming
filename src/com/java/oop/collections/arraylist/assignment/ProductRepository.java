@@ -12,44 +12,85 @@ public class ProductRepository {
             products.add(product);//adding as object
         }
     }
+    /* public ArrayList<Product> loadProductsFromData(String[] data){
+    for(String line:data){
+            String[] parts=line.split(",");//split by comma
+            Product product = new Product(parts[0],parts[1],Double.parseDouble(parts[2]),Float.parseFloat(parts[3]));//add each element //correct
+            products.add(product); //adding as object
+            return products;}
+/*
+==============================================
+     public productRepository(){
+     this.products=new ArrayList<>();
+     //correct
+public ArrayList<Product> getAll()
+{
+     return products;
+     }
+     */
 
     public void save(Product product)
     {
         products.add(product);
     }
+    /*=======================
+    public Product save(Product product){
+    products.add(product);
+    return Product;
+
+     */
 
     public Product getProductById(String id){
         for(Product product:products){
             if(product.getId().equals(id)){
-                return product;
+                return product;//correct
             }
         }
         return null;
     }
 
-    public void update(String id, Product product){
+  /* public Product update(String id, Product product){
+        Product byId=getProductById(id);
+        if(byId==null)
+            return null;
+        else{                  //correct
+            int index=products.indexOf(byId);
+            products.set(index,product);
+        }
+
+        }*/
+        public Product update(String id, Product product){
+
         for(Product p:products){
             if(product.getId().equals(id)){
                 Product newProduct = new Product();
                 product.setName(newProduct.getName());
                 product.setMaxRetailPrice((newProduct.getMaxRetailPrice()));
                 product.setDiscountPercentage(newProduct.getDiscountPercentage());
-                return;
+                return product;
             }
         }
+        return null;
 
     }
+    public void delete(Product product){
+        products.remove(product);}
 
-    public void delete(String id){
-        Iterator<Product> iterator = products.iterator();
+    public void deleteById(String id){
+            Product byId=getProductById(id);
+            products.remove(byId);//correct
+    }
+
+       /* Iterator<Product> iterator = products.iterator();
 
         while(iterator.hasNext()){
+
             Product p = iterator.next();
             if(p.getId().equals(id)){
                 iterator.remove();
             }
         }
-    }
+    }*/
     public void displayAllProducts(){
         for(Product product:products){
             product.display();

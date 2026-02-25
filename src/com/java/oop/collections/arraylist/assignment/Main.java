@@ -28,16 +28,24 @@ public class Main {
         Product newProduct = new Product("P105", "Tablet", 15000, 12);
         productRepository.save(newProduct);
         productRepository.displayAllProducts();
+        //===================================
+        System.out.println("\n GET PRODUCT BY ID");
+        System.out.println(productRepository.getProductById("p-110"));
 
         System.out.println("\n UPDATE PRODUCT");
         Product updated = new Product("P102", "Mobile Pro", 22000, 7);
         productRepository.update("P102", updated);
         productRepository.displayAllProducts();
 
-
-
-        System.out.println("\n DELETE PRODUCT");
+       /* System.out.println("\n DELETE");
+        Product productToBeDeleted=new Product();
         productRepository.delete("P103");
+        productRepository.displayAllProducts();*/
+
+
+
+        System.out.println("\n DELETE PRODUCT BY ID");
+        productRepository.deleteById("P103");
         productRepository.displayAllProducts();
 
 
