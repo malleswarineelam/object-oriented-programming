@@ -111,14 +111,47 @@ public class ProductRepository {
     }
 
 
-    public Product getHighestPriceProduct(){
-        return Collections.max(productArrayList,Comparator.comparing(Product::getMaxRetailPrice));
+    public Product getHighestPriceProduct() {
+
+        if(productArrayList.isEmpty()) return null;
+
+        Product highest = productArrayList.get(0);  // assume first is highest
+
+        for(Product p : productArrayList){
+            if(p.getMaxRetailPrice() > highest.getMaxRetailPrice()){
+                highest = p;   // update highest
+            }
+        }
+
+        return highest;
     }
-    public Product getLeastPriceProduct(){
-        return Collections.min(productArrayList,Comparator.comparing(Product::getMaxRetailPrice));
+    public Product getLeastPriceProduct() {
+
+        if(productArrayList.isEmpty()) return null;
+
+        Product least = productArrayList.get(0);
+
+        for(Product p : productArrayList){
+            if(p.getMaxRetailPrice() < least.getMaxRetailPrice()){
+                least = p;
+            }
+        }
+
+        return least;
     }
-    public Product getMaxDiscountProduct(){
-        return Collections.max(productArrayList,Comparator.comparing(Product::getDiscountPercentage));
+    public Product getMaxDiscountProduct() {
+
+        if(productArrayList.isEmpty()) return null;
+
+        Product maxDiscount = productArrayList.get(0);
+
+        for(Product p : productArrayList){
+            if(p.getDiscountPercentage() > maxDiscount.getDiscountPercentage()){
+                maxDiscount = p;
+            }
+        }
+
+        return maxDiscount;
     }
 
     public double getTotalValue(){
