@@ -16,6 +16,7 @@ public class ProductHashMap {
         productHashMap.put("p-101",new Product("p-101","Lenovo laptop",64000,1.1F));
         productHashMap.put("p-102",new Product("p-102","Dell laptop",55000,2.2F));
         productHashMap.put("p-103",new Product("p-103","Hp laptop",67000,3.3F));
+        productHashMap.put("p-106",new Product("p-106","Apple laptop",78000,6.6F));
         System.out.println(productHashMap);
 
         //Retrieval of keys from the map
@@ -53,16 +54,17 @@ public class ProductHashMap {
         System.out.println(productHashMap.containsKey("p-104"));
 
         //verification of values in the map -------- we use contains it returns true or false
-        /*System.out.println();
-        System.out.println(productHashMap.containsValue(""));
-        System.out.println(productHashMap.containsValue(p-101));*/
+        System.out.println();
+        System.out.println(productHashMap.containsValue(new Product("p-102","Dell laptop",55000,2.2F)));
+        //System.out.println(productHashMap.containsValue(p-101));
 
         //updation is done in map directly by changing,replace() method also
         System.out.println(productHashMap);
         productHashMap.put("p-103",new Product("p-104","Apple laptop",86000,4.4F));
         System.out.println(productHashMap);
 
-
+        productHashMap.replace("p-106",new Product("p-107","Apple laptop",78900,7.7F));
+        System.out.println(productHashMap);
 
 
     }
